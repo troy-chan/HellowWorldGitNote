@@ -1,0 +1,2 @@
+將目前資料夾設定為Git repo，即Git倉庫
+$ git init
