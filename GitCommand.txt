@@ -1,6 +1,9 @@
 將目前資料夾設定為Git repo，即Git倉庫
 $ git init
 
+加入使用者電郵
+$ git config --global user.email "ex@example.com"
+
 將Readme.txt檔加入版本控制
 $ git add Readme.txt
 將目前資料夾全部加入版本控制
@@ -8,3 +11,4 @@ $ git add -f --all
 
 將目前的Change commit
 $ git commit -m "<你想說的話>"
+
