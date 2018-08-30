@@ -15,5 +15,20 @@ $ git commit -m "<你想說的話>"
 // 檔案尚未加入過追蹤時使用，即可恢復到檔案尚未加入暫存區
 $ git rm --cached hello.py
 // 若檔案已經在 repository 內，則使用以下指令
-// repository 與 stage 的檔案都會被還原到 HEAD，但 working directory 內的檔案不變
-$ git reset HARD <logID>
+// repository 與 stage 的檔案都會被還原到 HEAD，但 working directory 內的檔案不變，--soft會把目前變更存至stage，--hard則不會
+$ git reset --hard <logID>
+
+查詢目前branch
+$ git branch
+新增一個branch叫new_func
+$ git branch new_func
+將目前branch切換至new_func
+$ git checkout new_func
+
+基於目前最新狀態的master branch(而非早前checkout出來的master狀態)，再附加上new_func所做的變化
+$ git rebase master
+把目前的branch合併master branch
+$ git merge
+
+查詢2 branch的差異
+$ git diff new_func master
