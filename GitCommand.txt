@@ -18,6 +18,9 @@ $ git rm --cached hello.py
 // repository 與 stage 的檔案都會被還原到 HEAD，但 working directory 內的檔案不變，--soft會把目前變更存至stage，--hard則不會
 $ git reset --hard <logID>
 
+查詢reset/commit的歷史logID，可惜此方式以reset --hard重回未來版本
+$ git reflog
+
 查詢目前branch
 $ git branch
 新增一個branch叫new_func
