@@ -69,10 +69,10 @@ $ git branch new_branch
 $ git checkout new_branch    # 或用 git checkout -b new_branch 直接新增並同時切換
 
 
-基於目前最新狀態的master branch(而非早前checkout出來的master狀態)，再附加上new_func所做的變化
+基於目前最新狀態的master branch(而非早前checkout出來的master狀態)，再附加上new_branch所做的變化
 $ git rebase master
-把目前的branch合併master branch
-$ git merge
+把指定的分支合併到當前分支
+$ git merge new_branch
 
 
 查詢2 branch的差異
