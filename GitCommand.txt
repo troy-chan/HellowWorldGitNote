@@ -66,13 +66,19 @@ $ git branch
 新增一個branch叫new_branch
 $ git branch new_branch
 將目前branch切換至new_branch
-$ git checkout new_branch    # 或用 git checkout -b new_branch 直接新增並同時切換
+$ git switch new_branch    #舊版為 git checkout new_branch     
+    或直接新增分支並同時切換
+    $ git switch -c new_branch    #舊版為 git checkout -b new_branch
 
 
 基於目前最新狀態的master branch(而非早前checkout出來的master狀態)，再附加上new_branch所做的變化
 $ git rebase master
 把指定的分支合併到當前分支
 $ git merge new_branch
+
+
+刪除分支
+$ git branch -d new_branch 
 
 
 查詢2 branch的差異
