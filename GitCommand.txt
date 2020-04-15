@@ -54,12 +54,19 @@ $ git checkout -- readme.txt
 $ git reset HEAD readme.txt
 
 
-琩高ヘ玡branch
+环狠repository(GitHub)(硂ㄇ矗ボGitHubΤ)origin箇砞环狠畐
+$ git remote add origin https://github.com/troy-chan/HellowWorldGitNote.git 
+рmasterだや崩癳GitHub repository
+$ git push -u origin master    #Ω崩癳羛挡masterだや把计-u
+$ git push origin master    #┕commit崩癳masterだや
+
+
+琩高ヘ玡┮局Τbranch
 $ git branch
-穝糤branchnew_func
-$ git branch new_func
-盢ヘ玡branchち传new_func
-$ git checkout new_func
+穝糤branchnew_branch
+$ git branch new_branch
+盢ヘ玡branchち传new_branch
+$ git checkout new_branch    # ┪ノ git checkout -b new_branch 钡穝糤ち传
 
 
 膀ヘ玡程穝篈master branch(τ獶Ν玡checkoutㄓmaster篈)new_func┮暗跑て
@@ -70,3 +77,7 @@ $ git merge
 
 琩高2 branch畉钵
 $ git diff new_func master
+
+
+
+
