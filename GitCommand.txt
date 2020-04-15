@@ -1,25 +1,58 @@
 將目前資料夾設定為Git repo，即Git倉庫
 $ git init
 
-加入使用者電郵
+
+加入使用者名稱及電郵
+$ git config --global user.name "Your Name"
 $ git config --global user.email "ex@example.com"
+
+
+查詢config setting
+$ git config --list
+
+
+查詢目前文件有何變化
+$ git diff readme.txt
+
 
 將Readme.txt檔加入版本控制
 $ git add Readme.txt
 將目前資料夾全部加入版本控制
 $ git add -f --all 
 
+
+將已刪除的文件加入版本控制，可用git checkout把在repo中的test.txt要回來
+$ git rm test.txt
+
+
 將目前的Change commit
 $ git commit -m "<你想說的話>"
+
+
+查詢曾經commit的history
+$ git log
+$ git log --pretty=oneline  #summary
+
+
+查詢執行命令的history
+$ git reflog    #包含commit的logID
+
 
 // 檔案尚未加入過追蹤時使用，即可恢復到檔案尚未加入暫存區
 $ git rm --cached hello.py
 // 若檔案已經在 repository 內，則使用以下指令
 // repository 與 stage 的檔案都會被還原到 HEAD，但 working directory 內的檔案不變，--soft會把目前變更存至stage，--hard則不會
-$ git reset --hard <logID>
+$ git reset --hard <logID>    # 指定logID不但可向前回復，也可向後反悔回復
+$ git reset --hard HEAD^      # HEAD為當前版本，HEAD^為上一版本，HEAD^^為上上版本，HEAD~100為上100版本 
 
-查詢reset/commit的歷史logID，可惜此方式以reset --hard重回未來版本
-$ git reflog
+
+回復檔案在目前工作區的修改，回復該檔在最近一次git add或git commit時的狀態，先檢查暫存區stage，沒有再看repository
+$ git checkout -- readme.txt
+
+
+取消暫存區stage的修改，HEAD表示最新版本，若想連目前的修改也取消並回復上一次commit時，就使用git checkout -- readme.txt
+$ git reset HEAD readme.txt
+
 
 查詢目前branch
 $ git branch
@@ -28,10 +61,12 @@ $ git branch new_func
 將目前branch切換至new_func
 $ git checkout new_func
 
+
 基於目前最新狀態的master branch(而非早前checkout出來的master狀態)，再附加上new_func所做的變化
 $ git rebase master
 把目前的branch合併master branch
 $ git merge
+
 
 查詢2 branch的差異
 $ git diff new_func master
